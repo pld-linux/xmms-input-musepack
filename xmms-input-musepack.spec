@@ -8,7 +8,7 @@ Group:		X11/Applications/Sound
 Source0:	http://dl.sourceforge.net/sourceforge/mpegplus/xmms-musepack-%{version}.tar.bz2
 # Source0-md5:	32fe1e12fedb6590b3146222df836ffa
 Patch0:		%{name}-Makefile.patch
-URL:		http://sourceforge.net/project/mpegplus/
+URL:		http://sourceforge.net/projects/mpegplus/
 BuildRequires:	xmms-devel
 Requires:	xmms
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
