@@ -1,5 +1,5 @@
-Summary:	This is an input plugin for XMMS which plays mp+ encoded audio files
-Summary(pl):	Wtyczka wej¶ciowa dla XMMS-a odtwarzaj±cy pliki mp+ (mpc)
+Summary:	This is an input plugin for XMMS which plays MP+ encoded audio files
+Summary(pl):	Wtyczka wej¶ciowa dla XMMS-a odtwarzaj±cy pliki MP+ (MPC)
 Name:		xmms-input-musepack
 Version:	1.00
 Release:	1
@@ -16,12 +16,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 This plugin for XMMS can play audio files which are encoded with
 Andree Buschmann's encoder Musepack. These files have the filename
-postfixes mpc, mp+ or mpp.
+postfixes MPC, MP+ or MPP.
 
 %description -l pl
 Ta wtyczka XMMS odtwarza pliki d¼wiêkowe zakodowane koderem Musepack
-autorstwa Andree Buschmanna. Te pliki maj± rozszerzenie mpc, mp+ lub
-mpp.
+autorstwa Andree Buschmanna. Te pliki maj± rozszerzenie MPC, MP+ lub
+MPP.
 
 %prep
 %setup -q -n xmms-musepack-%{version}
