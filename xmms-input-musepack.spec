@@ -6,10 +6,14 @@ Release:	1
 License:	LGPL
 Group:		X11/Applications/Multimedia
 Source:		http://telia.dl.sourceforge.net/sourceforge/mpegplus/xmms-musepack-%{version}.tar.bz2
+Patch0:		%{name}-Makefile.patch
 URL:		http://sourceforge.net/project/mpegplus/
+BuildRequires:	xmms-devel
+Requires:	xmms
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define     _prefix     /usr/X11R6
+%define		_prefix			/usr/X11R6
+%define		_xmms_input_path	%(xmms-config --input-plugin-dir)
 
 %description
 This plugin for XMMS can play audio files which are encoded with
@@ -17,22 +21,29 @@ Andree Buschmann's encoder Musepack. These files have the filename
 postfixes mpc, mp+ or mpp.
 
 %prep
-rm -rf $RPM_BUILD_ROOT
-
 %setup -q -n xmms-musepack-%{version}
+%patch0 -p1
 
 %build
-%{__make}
+%{__make} \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_libdir}/xmms/Input/
-install -s xmms-musepack-%{version}.so $RPM_BUILD_ROOT%{_libdir}/xmms/Input/
+install -d $RPM_BUILD_ROOT%{_xmms_input_path}
+
+install xmms-musepack-%{version}.so $RPM_BUILD_ROOT%{_xmms_input_path}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog README_mpp-plugin_eng.txt
-%attr(755,root,root) %{_libdir}/xmms/Input/* 
+%doc ChangeLog
+%doc README_mpc-plugin_english.txt
+%doc %lang(de) README_mpc-plugin_german.txt
+%doc %lang(es) README_mpc-plugin_spanish.txt
+%doc %lang(fi) README_mpc-plugin_finnish.txt
+%doc %lang(ko) README_mpc-plugin_korean.txt
+%attr(755,root,root) %{_xmms_input_path}/* 
