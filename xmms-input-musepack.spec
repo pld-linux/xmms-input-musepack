@@ -49,4 +49,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc %lang(es) README_mpc-plugin_spanish.txt
 %doc %lang(fi) README_mpc-plugin_finnish.txt
 %doc %lang(ko) README_mpc-plugin_korean.txt
-%attr(755,root,root) %{xmms_input_plugindir}/* 
+%attr(755,root,root) %{xmms_input_plugindir}/*
