@@ -5,7 +5,8 @@ Version:	0.94
 Release:	2
 License:	LGPL
 Group:		X11/Applications/Sound
-Source:		http://telia.dl.sourceforge.net/sourceforge/mpegplus/xmms-musepack-%{version}.tar.bz2
+Source0:	http://dl.sourceforge.net/sourceforge/mpegplus/xmms-musepack-%{version}.tar.bz2
+# Source0-md5:	32fe1e12fedb6590b3146222df836ffa
 Patch0:		%{name}-Makefile.patch
 URL:		http://sourceforge.net/project/mpegplus/
 BuildRequires:	xmms-devel
