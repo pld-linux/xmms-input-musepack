@@ -12,7 +12,6 @@ BuildRequires:	xmms-devel
 Requires:	xmms
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix			/usr/X11R6
 %define		_xmms_input_path	%(xmms-config --input-plugin-dir)
 
 %description
