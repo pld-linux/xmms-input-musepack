@@ -19,7 +19,7 @@ Andree Buschmann's encoder Musepack. These files have the filename
 postfixes MPC, MP+ or MPP.
 
 %description -l pl
-Ta wtyczka XMMS odtwarza pliki d¼wiêkowe zakodowane koderem Musepack
+Ta wtyczka XMMS-a odtwarza pliki d¼wiêkowe zakodowane koderem Musepack
 autorstwa Andree Buschmanna. Te pliki maj± rozszerzenie MPC, MP+ lub
 MPP.
 
