@@ -1,22 +1,11 @@
---- xmms-musepack-0.94/Makefile~	Tue Sep  3 19:21:02 2002
-+++ xmms-musepack-0.94/Makefile	Tue Sep  3 19:21:02 2002
-@@ -1,9 +1,6 @@
- VERSION = 0.94
+diff -urN xmms-musepack-1.00.orig/Makefile xmms-musepack-1.00/Makefile
+--- xmms-musepack-1.00.orig/Makefile	2004-06-25 11:24:47.000000000 +0000
++++ xmms-musepack-1.00/Makefile	2004-08-13 22:15:21.282184504 +0000
+@@ -1,6 +1,6 @@
+ CC      = gcc
+ VERSION = 1.00
+-OPTIONS = -Wall -shared -O3 -march=pentium --fast-math -DPOSIX -D_REENTRANT -DREENTRANT -I.. -DMPP_ENCODER
++OPTIONS = -Wall -shared $(CFLAGS) --fast-math -DPOSIX -D_REENTRANT -DREENTRANT -I.. -DMPP_ENCODER
  
--ifdef ARCH
--else
--ARCH=-march=athlon -mcpu=athlon
--endif
-+CFALGS = -march=athlon -mcpu=athlon -O3 --fast-math
  
- SOURCE = in_mpc.c bitstream.c huff_new.c huff_old.c requant.c synth_filter.c mpc_dec.c
- 
-@@ -19,7 +16,7 @@
- 	`xmms-config --input-plugin-dir`/xmms-musepack-`echo $(VERSION)`.so
- 
- xmms-musepack-$(VERSION).so: $(SOURCE) Makefile
--	gcc -s -DVERSION=\"$(VERSION)\" $(ARCH) -Wall -pedantic -shared -O3 $(ARCH) --fast-math -DPOSIX -D_REENTRANT -DREENTRANT `xmms-config --cflags --libs` `gtk-config --cflags --libs` -o xmms-musepack-`echo $(VERSION)`.so $(SOURCE)
-+	$(CC) -DVERSION=\"$(VERSION)\" -Wall -pedantic -shared $(CFLAGS) -DPOSIX -D_REENTRANT -DREENTRANT `xmms-config --cflags --libs` `gtk-config --cflags --libs` -o xmms-musepack-`echo $(VERSION)`.so $(SOURCE)
- 
- clean:
- 	rm -f *.o xmms-musepack-`echo $(VERSION)`.so
+ SOURCE  = in_mpc.c bitstream.c huffsv46.c huffsv7.c requant.c synth_filter.c mpc_dec.c equalizer.c equal.c tags.c
