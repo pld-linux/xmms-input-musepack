@@ -4,7 +4,7 @@ Name:		xmms-input-musepack
 Version:	0.94
 Release:	2
 License:	LGPL
-Group:		X11/Applications/Multimedia
+Group:		X11/Applications/Sound
 Source:		http://telia.dl.sourceforge.net/sourceforge/mpegplus/xmms-musepack-%{version}.tar.bz2
 Patch0:		%{name}-Makefile.patch
 URL:		http://sourceforge.net/project/mpegplus/
