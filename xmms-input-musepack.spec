@@ -12,7 +12,7 @@ URL:		http://sourceforge.net/projects/mpegplus/
 BuildRequires:	rpmbuild(macros) >= 1.125
 BuildRequires:	xmms-devel
 Requires:	xmms
-Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This plugin for XMMS can play audio files which are encoded with
