@@ -7,7 +7,7 @@ License:	LGPL
 Group:		X11/Applications/Sound
 Source0:	http://www.saunalahti.fi/grimmel/musepack.net/linux/plugins/xmms-musepack-%{version}.tar.bz2
 # Source0-md5:	8aed0b02562ee3913b5fd058d2c14ccf
-URL:		http://sourceforge.net/projects/mpegplus/
+URL:		http://www.musepack.net/
 BuildRequires:	glib2-devel >= 2.0.0
 BuildRequires:	gtk+-devel >= 1.2.2
 BuildRequires:	libmusepack-devel
