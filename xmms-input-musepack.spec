@@ -2,7 +2,7 @@ Summary:	This is an input plugin for XMMS which plays mp+ encoded audio files
 Summary(pl):	Wtyczka wej¶ciowa dla XMMS-a odtwarzaj±cay pliki mp+ (mpc)
 Name:		xmms-input-musepack
 Version:	0.94
-Release:	3
+Release:	4
 License:	LGPL
 Group:		X11/Applications/Sound
 Source0:	http://dl.sourceforge.net/mpegplus/xmms-musepack-%{version}.tar.bz2
@@ -31,7 +31,7 @@ mpp.
 %build
 %{__make} \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags}"
+	CFLAGS="%{rpmcflags} -ffast-math -fPIC"
 
 %install
 rm -rf $RPM_BUILD_ROOT
