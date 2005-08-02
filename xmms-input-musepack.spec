@@ -1,16 +1,17 @@
 Summary:	This is an input plugin for XMMS which plays MP+ encoded audio files
 Summary(pl):	Wtyczka wej¶ciowa dla XMMS-a odtwarzaj±cy pliki MP+ (MPC)
 Name:		xmms-input-musepack
-Version:	1.1.2
-Release:	2
+Version:	1.2
+%define	_RC RC1
+Release:	0.%{_RC}.1
 License:	LGPL
 Group:		X11/Applications/Sound
-Source0:	http://www.saunalahti.fi/grimmel/musepack.net-files/linux/plugins/xmms-musepack-%{version}.tar.bz2
-# Source0-md5:	9c7c35f3ae39d1b43a009f9111b21964
+Source0:	http://files.musepack.net/linux/plugins/xmms-musepack-%{version}-%{_RC}.tar.bz2
+# Source0-md5:	db3d2988fc76e1976b9d4921d4bbc3cd
 URL:		http://www.musepack.net/
 BuildRequires:	glib2-devel >= 2.0.0
 BuildRequires:	gtk+-devel >= 1.2.2
-BuildRequires:	libmusepack-devel
+BuildRequires:	libmpcdec-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.125
 BuildRequires:	sed >= 4.0
@@ -30,7 +31,7 @@ autorstwa Andree Buschmanna. Te pliki maj± rozszerzenie MPC, MP+ lub
 MPP.
 
 %prep
-%setup -q -n xmms-musepack-%{version}
+%setup -q -n xmms-musepack-%{version}-%{_RC}
 
 sed -i -e '/-O3 -fomit-frame-pointer/d' configure
 
