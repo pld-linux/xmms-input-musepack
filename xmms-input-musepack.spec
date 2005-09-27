@@ -14,6 +14,7 @@ BuildRequires:	libmpcdec-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.125
 BuildRequires:	sed >= 4.0
+BuildRequires:	taglib-devel
 BuildRequires:	xmms-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
