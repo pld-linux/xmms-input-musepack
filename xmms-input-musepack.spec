@@ -1,12 +1,12 @@
 Summary:	This is an input plugin for XMMS which plays MP+ encoded audio files
 Summary(pl.UTF-8):	Wtyczka wejściowa dla XMMS-a odtwarzający pliki MP+ (MPC)
 Name:		xmms-input-musepack
-Version:	1.2
+Version:	1.2.1
 Release:	1
 License:	LGPL
 Group:		X11/Applications/Sound
 Source0:	http://files.musepack.net/linux/plugins/xmms-musepack-%{version}.tar.bz2
-# Source0-md5:	ff7f5f9122d09ad63af9c564046086cf
+# Source0-md5:	d9d5ee7720d39f466ea71f4a7a285e83
 URL:		http://www.musepack.net/
 BuildRequires:	glib2-devel >= 2.0.0
 BuildRequires:	gtk+-devel >= 1.2.2
