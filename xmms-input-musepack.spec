@@ -3,14 +3,17 @@ Summary(pl.UTF-8):	Wtyczka wejściowa dla XMMS-a odtwarzający pliki MP+ (MPC)
 Name:		xmms-input-musepack
 Version:	1.2.1
 Release:	0.1
-License:	LGPL
+License:	BSD
 Group:		X11/Applications/Sound
 Source0:	http://files.musepack.net/linux/plugins/xmms-musepack-%{version}.tar.bz2
 # Source0-md5:	d9d5ee7720d39f466ea71f4a7a285e83
 URL:		http://www.musepack.net/
-BuildRequires:	glib2-devel >= 2.0.0
+BuildRequires:	autoconf >= 2.50
+BuildRequires:	automake
+BuildRequires:	glib-devel >= 1:1.2.10
 BuildRequires:	gtk+-devel >= 1.2.2
 BuildRequires:	libmpcdec-devel
+BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.125
 BuildRequires:	sed >= 4.0
@@ -33,7 +36,8 @@ MPP.
 %prep
 %setup -q -n xmms-musepack-%{version}
 
-sed -i -e '/-O3 -fomit-frame-pointer/d' configure
+sed -i -e '/-O3 -fomit-frame-pointer/d' configure.ac
+chmod +x configure
 
 %build
 %{__libtoolize}
@@ -57,4 +61,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc COPYING ChangeLog
 %attr(755,root,root) %{xmms_input_plugindir}/*.so
